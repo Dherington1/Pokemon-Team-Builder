@@ -2,6 +2,7 @@
   Link: ""
   
   ## Description
+  * No live link yet
   Pokemon Team Builder made with React. This applications will allow you to create a pokemon team for almost every game. 
   Currently only Gen 1 and Gen 2 are supported.
   
