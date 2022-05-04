@@ -3,10 +3,12 @@ import { createReducer } from '@reduxjs/toolkit';
 //actions 
 import {addPokemon} from '../Action/teamActions';
 import {deletePokemon} from '../Action/teamActions';
+import { addSelection } from '../Action/teamActions';
 
 // initialState of globalState
 const initialState = {
-  team: []
+  team: [],
+  selection: []
 }
 
 // allows for change in the initialState
@@ -24,6 +26,12 @@ const teamReducer = createReducer(initialState, (builder) => {
       // filter to get pokemon that weren't selected to be deleted
       state.team = state.team.filter(pokemon => pokemon.id !== action.payload.id)
     })
+    .addCase(addSelection, (state, action) => {
+      // reducer to add the pokemon to the array
+      state.selection.push(action.payload)
+    })
 })
+
+
 
 export default teamReducer;

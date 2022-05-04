@@ -8,72 +8,73 @@ import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
 
-const CardList = (pokemon) => {
-
-  // array for entry numbers
-  const pokemonNum = [];
-  let newArray = [];
-  // push our props pokemon numbers into out array
-  pokemon.pokemon.forEach((pokeNum) => {
-    pokemonNum.push(pokeNum.pokemon_species.name)
-    newArray.push(pokeNum.pokemon_species.name)
-  })
-
+const CardList = ({pokemonSelection, setState, search}) => {
   // reference to global state to push an action to data 
   const dispatch = useDispatch();
-
   // reference to global state to grab data
   const team = useSelector(state => state.team.team);
-
+ 
   // array that has pokemon names in it
-  // used to check length of global state and if name is already in global state 
-  let checkTeam = [];
-  
-  // filter to push into checkTeam
-  team.filter((pokemon) => {
-    // push name to array
-    checkTeam.push(pokemon.id)
-  })
-
+  // used to check length of global state 
+  let checkTeam = team.filter(pokemon => pokemon.id)
 
   // change our pokemon in the global state
   const addToGlobalState = (e) => {
     e.preventDefault();
-    let newTeamMember = e.target.id; 
+    let newTeamMemberId = e.target.id; 
+    let newTeamMemberClass = e.target.className;
 
-    // checks to see if selected pokemon is already in the party
-    const notInParty = checkTeam.includes(newTeamMember);
+    // variable for length of list array
     const partyLength = checkTeam.length;
 
-    // check to see already in the party
-    if (!notInParty && partyLength < 6){
-        // dispatch selected pokemon id to global variable
-        dispatch(
-            // use action addPokemon
-            addPokemon({
-                id: newTeamMember
-            })
-        ) 
+    // check to see already in the party and if party is less than 6
+    if (partyLength < 6){
+   
+      // dispatch selected pokemon id to global variable
+      dispatch(
+          // use action addPokemon
+          addPokemon({
+            id: newTeamMemberId,
+            entry: newTeamMemberClass
+          })
+      ) 
     }
 
+    // call remove from selection list after pokemon was added to team
+    removeFromSelection(newTeamMemberId, partyLength);
+  }
+
+
+  // remove pokemon from selection
+  const removeFromSelection = (newTeamMember, partyLength) => {
     // remove pokemon from the choices list
     // filter to get pokemon not picked
-    newArray = pokemonNum.filter(selected => selected !== newTeamMember);
+    if (partyLength < 6){
+      setState(state => state.filter((selected) => selected.pokemon_species.name !== newTeamMember))
+    }
   }
- 
-  
 
   return (
     <>
-      <div className='card-list'>
-          {pokemonNum.map(pokemon =>(
-            <Card key={pokemon} pokemon={pokemon} handleClick={addToGlobalState}></Card>
+      {/* if search is empty show the whole list */}
+      {search === "" ? (
+        <div className='card-list'>
+          {pokemonSelection.map(pokemon => (
+            <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
           ))}
-      </div>
+        </div>
+      ) : (
+        //  if not map to the pokemon that match to the search bar
+        <div className='card-list'>
+          {pokemonSelection.map((val) => {
+            if (val.pokemon_species.name.includes(search.toLowerCase())) {
+              return <Card key={val.pokemon_species.name} pokemon={val.pokemon_species.name} entryNum={val.entry_number} handleClick={addToGlobalState}></Card>
+            }
+          })}
+        </div>
+      )}
     </>
   )
-
 }
 
 export default CardList;
-
