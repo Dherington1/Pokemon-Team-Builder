@@ -10,13 +10,12 @@ import axios from 'axios'
 const Gen1 = () => {
   // API pokemon will go into this state
   const [pokemonSelection, setPokemonSelection] = useState([])
-  const [pokemontype, setPokemonType] = useState([])
+  const [pokemonType, setPokemonType] = useState([])
   const [search, setSearch] = useState('');
 
   // useEffect needed for data to render onto page from API
   useEffect(() => {
     getAllPokemonApiData()
-    // getTypingApiData()
   }, [])
 
   // fetch for pokemon in this generation
@@ -25,20 +24,28 @@ const Gen1 = () => {
       .get('https://pokeapi.co/api/v2/pokedex/2')
       .then(response => {
         // set state to response 
-        // console.log(response.data.pokemon_entries);
         setPokemonSelection(response.data.pokemon_entries);
       })
   }
 
+  // var arr1 = [1,2,3,4],
+  //   arr2 = [2,4],
+  //   res = arr1.filter(item => !arr2.includes(item));
+  //   console.log(res);
+
   // fetch for pokemon with certain typing
   const getTypingApiData = (id) => {
     axios
-    // .get(`https://pokeapi.co/api/v2/type/${id}/`)
     .get(`https://pokeapi.co/api/v2/type/${id}/`)
     .then(response => {
       console.log('this is typing response');
-      console.log(response.data.pokemon);
-      setPokemonType(response.data.pokemon);
+      let arr = []
+  
+      response.data.pokemon.forEach(element => {
+        arr.push(element.pokemon.name)
+      });
+   
+     setPokemonType(pokemonSelection.filter(item => arr.includes(item.pokemon_species.name)));
     })
   }
 
@@ -50,10 +57,8 @@ const Gen1 = () => {
 
   // use for an onClick for typing buttons 
   const typingFetch = (e) => {
-    console.log('typing clicked');
     // get id from DOM
     const id = e.target.id;
-    console.log(id);
     // send id to fetch call
     getTypingApiData(id);
   }
@@ -88,6 +93,8 @@ const Gen1 = () => {
             pokemonSelection={pokemonSelection} 
             setState={setPokemonSelection} 
             search={search}
+            setSearch={setSearch}
+            typing={pokemonType}
           />
           </fieldset>
         </form>

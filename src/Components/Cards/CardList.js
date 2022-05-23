@@ -1,6 +1,7 @@
 import React from 'react';
 import  Card  from './individualCard';
 import './CardList.css'
+import SearchBox from '../Search/SearchBox'
 // action to add pokemon 
 import {addPokemon} from '../../Redux/Action/teamActions';
 // bring in our global variable
@@ -8,7 +9,7 @@ import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 
 
-const CardList = ({pokemonSelection, setState, search}) => {
+const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
   // reference to global state to push an action to data 
   const dispatch = useDispatch();
   // reference to global state to grab data
@@ -39,7 +40,12 @@ const CardList = ({pokemonSelection, setState, search}) => {
           })
       ) 
     }
-
+    // if it was picked from typing 
+    typing.length = 0;
+    // set search to empty if clicked from search
+    setSearch("")
+    // SearchBox.innerhtml("")
+    console.log(search);
     // call remove from selection list after pokemon was added to team
     removeFromSelection(newTeamMemberId, partyLength);
   }
@@ -54,25 +60,46 @@ const CardList = ({pokemonSelection, setState, search}) => {
     }
   }
 
+
+  console.log(typing.length + 1)
+  // console.log(pokemonSelection);
+
+  const filterTypingOfPokemon = () => {
+
+    console.log('hello world');
+  }
+
+
+
   return (
     <>
-      {/* if search is empty show the whole list */}
-      {search === "" ? (
-        <div className='card-list'>
-          {pokemonSelection.map(pokemon => (
-            <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
-          ))}
-        </div>
-      ) : (
-        //  if not map to the pokemon that match to the search bar
-        <div className='card-list'>
-          {pokemonSelection.map((val) => {
-            if (val.pokemon_species.name.includes(search.toLowerCase())) {
-              return <Card key={val.pokemon_species.name} pokemon={val.pokemon_species.name} entryNum={val.entry_number} handleClick={addToGlobalState}></Card>
-            }
-          })}
-        </div>
-      )}
+      {
+        (typing.length > 0) ? (
+          // For typing filter
+          <div className='card-list'>
+            {typing.map(pokemon => (
+              <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
+            ))}
+          </div>
+
+        ) : (search === "") ? (
+          // if search is empty show the whole list
+          <div className='card-list'>
+            {pokemonSelection.map(pokemon => (
+              <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
+            ))}
+          </div>
+        ) : (
+          //  if not map to the pokemon that match to the search bar or typing filter not clicked
+          <div className='card-list'>
+            {pokemonSelection.map((val) => {
+              if (val.pokemon_species.name.includes(search.toLowerCase())) {
+                return <Card key={val.pokemon_species.name} pokemon={val.pokemon_species.name} entryNum={val.entry_number} handleClick={addToGlobalState}></Card>
+              }
+            })}
+          </div>
+        )
+      }
     </>
   )
 }
