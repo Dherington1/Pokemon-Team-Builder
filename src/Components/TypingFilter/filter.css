@@ -1,0 +1,10 @@
+.typing {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.typingCard {
+  padding: 5px;
+}

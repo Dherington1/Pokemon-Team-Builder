@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardList  from '../Components/Cards/CardList';
 import TeamBuilder from '../Components/TeamBuildContainer/TeamBuilder'
 import SearchBox from '../Components/Search/SearchBox'; 
+import Filter from '../Components/TypingFilter/Filter';
 import './Generation.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
@@ -15,7 +16,7 @@ const Gen1 = () => {
   // useEffect needed for data to render onto page from API
   useEffect(() => {
     getAllPokemonApiData()
-    getTypingApiData()
+    // getTypingApiData()
   }, [])
 
   // fetch for pokemon in this generation
@@ -24,6 +25,7 @@ const Gen1 = () => {
       .get('https://pokeapi.co/api/v2/pokedex/2')
       .then(response => {
         // set state to response 
+        // console.log(response.data.pokemon_entries);
         setPokemonSelection(response.data.pokemon_entries);
       })
   }
@@ -32,8 +34,9 @@ const Gen1 = () => {
   const getTypingApiData = (id) => {
     axios
     // .get(`https://pokeapi.co/api/v2/type/${id}/`)
-    .get('https://pokeapi.co/api/v2/type/3/')
+    .get(`https://pokeapi.co/api/v2/type/${id}/`)
     .then(response => {
+      console.log('this is typing response');
       console.log(response.data.pokemon);
       setPokemonType(response.data.pokemon);
     })
@@ -47,8 +50,10 @@ const Gen1 = () => {
 
   // use for an onClick for typing buttons 
   const typingFetch = (e) => {
+    console.log('typing clicked');
     // get id from DOM
     const id = e.target.id;
+    console.log(id);
     // send id to fetch call
     getTypingApiData(id);
   }
@@ -78,6 +83,7 @@ const Gen1 = () => {
             placeholder='Search Pokemon' 
             handleChange= {change4Search}
           />
+          <Filter handleClick={typingFetch}/>
           <CardList 
             pokemonSelection={pokemonSelection} 
             setState={setPokemonSelection} 
