@@ -6,6 +6,8 @@ import Filter from '../Components/TypingFilter/Filter';
 import './Generation.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 
 const Gen1 = () => {
   // API pokemon will go into this state
@@ -61,7 +63,9 @@ const Gen1 = () => {
     <div className="App">
       
       {/* Title */}
-      <h1 id='title'>Generation 1</h1>
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        <h1 style={{color: 'black'}} id='title'>Generation 1</h1>
+      </Link>
 
       {/* Users team */}
       <div className='teamBuilder'>

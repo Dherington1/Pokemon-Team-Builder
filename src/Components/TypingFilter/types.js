@@ -1,6 +1,3 @@
-// import '../../../public/images/type'
-
-
 let pokemonTyping =  
 [
   {

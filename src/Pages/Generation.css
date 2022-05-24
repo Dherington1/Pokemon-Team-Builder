@@ -1,5 +1,6 @@
 #title{
   text-align: center;
+  text-decoration: none;
 }
 
 
@@ -53,4 +54,8 @@
 .cardFieldset {
   padding: 20px 10px;
   border: none;
+}
+
+.App h1{
+  text-decoration: none;
 }
