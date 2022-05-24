@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import  Card  from './individualCard';
 import './CardList.css'
 // action to add pokemon 
@@ -62,15 +62,16 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
     }
   }
 
-  // clear typing
-  const ClearTyping = (e) => {
-    // e.preventDefault()
-    console.log(typing);
-    typing.length = 0;
+  // use to just to refresh DOM with clearTyping
+  const [typingState, setTypingState] = useState([])
 
-    console.log(typing.length);
-    console.log(typing);
-    console.log('typing cleared');
+  // clear typing
+  const ClearTyping = () => {
+    // set length to 0 to change return 
+    typing.length = 0;
+    // used to refresh the DOM
+    setTypingState([])
+
   }
 
 
@@ -81,7 +82,7 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
           // For typing filter
           <div>
             <div className='clearBtn'>
-              <h4 onClick={ClearTyping}>Clear Typing</h4>
+              <h4 onClick={ClearTyping}>Clear Typing Filter</h4>
             </div>
             
             <div className='card-list'>
