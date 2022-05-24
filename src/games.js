@@ -32,7 +32,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon SoulSilver and HeartGold",
       "pic": "/images/Gen-games/soulngold.jpeg",
-      "gen" : 4
+      "gen" : "4Remaster"
     }
   },
   {
@@ -46,7 +46,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon Black and White 2",
       "pic": "/images/Gen-games/blacknwhite2.jpeg",
-      "gen" : 5
+      "gen" : "5Part2"
     }
   },
   {
@@ -60,7 +60,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon Omega Ruby and Alpha Sapphire",
       "pic": "/images/Gen-games/ORAS.jpeg",
-      "gen" : 6
+      "gen" : "6Remaster"
     }
   },
   {
@@ -74,7 +74,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon Ultra Sun and Ultra Moon",
       "pic": "/images/Gen-games/Pokemon-Ultra-Sun-and-Ultra-Moon-1024x579.jpeg",
-      "gen" : 7
+      "gen" : "7Part2"
     }
   },
   {

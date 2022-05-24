@@ -7,12 +7,18 @@ import GameCard from '../Components/Cards/GamePicCard'
 function Home() {
   return (
     <div>
-      
-      <div className='cardList'>
-          {games.map(game => (
-            <GameCard gen={game.game.gen} key={game.game.name} picture={game.game.pic} name={game.game.name}/>
-          ))}
-      </div>
+      <form className="teamForm">
+          <fieldset className="teamFieldset">
+            <h3>POKEMON TEAM BUILDER</h3>
+            
+            <div className='cardList'>
+                {games.map(game => (
+                  <GameCard gen={game.game.gen} key={game.game.name} picture={game.game.pic} name={game.game.name}/>
+                ))}
+            </div>
+            
+        </fieldset>
+      </form>
     </div>
   )
 }
