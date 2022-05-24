@@ -5,3 +5,10 @@
   margin: 0px 2%;
 }
 
+.clearBtn {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin: 0px 2%;
+  cursor: pointer;
+}

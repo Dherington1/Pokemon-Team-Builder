@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import CardList  from '../Components/Cards/CardList';
 import TeamBuilder from '../Components/TeamBuildContainer/TeamBuilder'
 import SearchBox from '../Components/Search/SearchBox'; 
@@ -28,24 +28,18 @@ const Gen1 = () => {
       })
   }
 
-  // var arr1 = [1,2,3,4],
-  //   arr2 = [2,4],
-  //   res = arr1.filter(item => !arr2.includes(item));
-  //   console.log(res);
-
   // fetch for pokemon with certain typing
   const getTypingApiData = (id) => {
     axios
     .get(`https://pokeapi.co/api/v2/type/${id}/`)
     .then(response => {
-      console.log('this is typing response');
       let arr = []
-  
+      // set response to arr
       response.data.pokemon.forEach(element => {
         arr.push(element.pokemon.name)
       });
-   
-     setPokemonType(pokemonSelection.filter(item => arr.includes(item.pokemon_species.name)));
+      // set typing with a filter
+      setPokemonType(pokemonSelection.filter(item => arr.includes(item.pokemon_species.name)));
     })
   }
 

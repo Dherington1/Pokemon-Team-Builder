@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import  Card  from './individualCard';
 import './CardList.css'
-import SearchBox from '../Search/SearchBox'
 // action to add pokemon 
 import {addPokemon} from '../../Redux/Action/teamActions';
 // bring in our global variable
@@ -14,7 +13,7 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
   const dispatch = useDispatch();
   // reference to global state to grab data
   const team = useSelector(state => state.team.team);
- 
+
   // array that has pokemon names in it
   // used to check length of global state 
   let checkTeam = team.filter(pokemon => pokemon.id)
@@ -40,12 +39,15 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
           })
       ) 
     }
+
     // if it was picked from typing 
     typing.length = 0;
+
     // set search to empty if clicked from search
+    var searchbar = document.querySelector('.searchInput')
+    searchbar.value = ""
     setSearch("")
-    // SearchBox.innerhtml("")
-    console.log(search);
+
     // call remove from selection list after pokemon was added to team
     removeFromSelection(newTeamMemberId, partyLength);
   }
@@ -60,15 +62,16 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
     }
   }
 
+  // clear typing
+  const ClearTyping = (e) => {
+    // e.preventDefault()
+    console.log(typing);
+    typing.length = 0;
 
-  console.log(typing.length + 1)
-  // console.log(pokemonSelection);
-
-  const filterTypingOfPokemon = () => {
-
-    console.log('hello world');
+    console.log(typing.length);
+    console.log(typing);
+    console.log('typing cleared');
   }
-
 
 
   return (
@@ -76,10 +79,16 @@ const CardList = ({pokemonSelection, setState, search, typing, setSearch}) => {
       {
         (typing.length > 0) ? (
           // For typing filter
-          <div className='card-list'>
-            {typing.map(pokemon => (
-              <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
-            ))}
+          <div>
+            <div className='clearBtn'>
+              <h4 onClick={ClearTyping}>Clear Typing</h4>
+            </div>
+            
+            <div className='card-list'>
+              {typing.map(pokemon => (
+                <Card key={pokemon.pokemon_species.name} pokemon={pokemon.pokemon_species.name} entryNum={pokemon.entry_number} handleClick={addToGlobalState}></Card>
+              ))}
+            </div>
           </div>
 
         ) : (search === "") ? (
