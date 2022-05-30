@@ -5,4 +5,4 @@ import {createAction} from '@reduxjs/toolkit';
 export const addPokemon = createAction('addPokemon');
 export const deletePokemon = createAction('deletePokemon');
 export const addSelection = createAction('addSelection');
-
+export const deleteAllPokemon  = createAction('deleteAllPokemon ');

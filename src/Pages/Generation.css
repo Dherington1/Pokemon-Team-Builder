@@ -1,6 +1,11 @@
+body {
+  font-family: "Pokemon";
+}
+
 #title{
   text-align: center;
   text-decoration: none;
+  font-size: 32px;
 }
 
 
@@ -12,6 +17,7 @@
 .teamBuilder h3 {
   text-align: center;
   margin: 0px;
+  font-size: large;
 }
 .teamForm {
   max-width: 90%;
@@ -29,16 +35,15 @@
 }
 .teamFieldset h3{
   margin: 0px;
+  font-size: 24px;
 }
 
 
 /* Choose pokemon */
-.choosePokemon {
-
-}
 .choosePokemon h3 {
   text-align: center;
   margin-bottom: 15px;
+  font-size: 24px;
 }
 /* whole form */
 .cardForm {
@@ -58,4 +63,16 @@
 
 .App h1{
   text-decoration: none;
+  color: #444444;
+}
+
+/* title pics */
+.parent {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+.titlePics {
+  object-fit: scale-down;
+  width: 100%;
 }

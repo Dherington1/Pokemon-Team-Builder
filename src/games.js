@@ -10,14 +10,14 @@ let gameTitles =
   {
     "game": {
       "name": "Pokemon Gold and Silver",
-      "pic": "/images/Gen-games/Pokemon-Ruby-and-Sapphire.png",
+      "pic": "/images/Gen-games/Pokemon-Gold-and-Silver.jpeg",
       "gen" : 2
     }
   },
   {
     "game": {
       "name": "Pokemon Ruby and Sapphire",
-      "pic": "/images/Gen-games/Pokemon-Gold-and-Silver.jpeg",
+      "pic": "/images/Gen-games/Pokemon-Ruby-and-Sapphire.png",
       "gen" : 3
     }
   },
@@ -30,9 +30,16 @@ let gameTitles =
   },
   {
     "game": {
+      "name": "Pokemon Platinum",
+      "pic": "/images/Gen-games/plat2.jpeg",
+      "gen" : "4-Platinum"
+    }
+  },
+  {
+    "game": {
       "name": "Pokemon SoulSilver and HeartGold",
       "pic": "/images/Gen-games/soulngold.jpeg",
-      "gen" : "4Remaster"
+      "gen" : "4-Remaster"
     }
   },
   {
@@ -46,7 +53,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon Black and White 2",
       "pic": "/images/Gen-games/blacknwhite2.jpeg",
-      "gen" : "5Part2"
+      "gen" : "5-Part2"
     }
   },
   {
@@ -60,7 +67,7 @@ let gameTitles =
     "game": {
       "name": "Pokemon Omega Ruby and Alpha Sapphire",
       "pic": "/images/Gen-games/ORAS.jpeg",
-      "gen" : "6Remaster"
+      "gen" : "6-Remaster"
     }
   },
   {
@@ -74,14 +81,14 @@ let gameTitles =
     "game": {
       "name": "Pokemon Ultra Sun and Ultra Moon",
       "pic": "/images/Gen-games/Pokemon-Ultra-Sun-and-Ultra-Moon-1024x579.jpeg",
-      "gen" : "7Part2"
+      "gen" : "7-Part2"
     }
   },
   {
     "game": {
       "name": "Pokemon Lets Go Pikachu and Lets Go Evee",
       "pic": "/images/Gen-games/letGo.jpeg",
-      "gen" : 1
+      "gen" : "-Lets-Go"
     }
   },
   {

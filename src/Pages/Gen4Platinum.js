@@ -9,7 +9,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
-const Gen5Part2 = () => {
+const Gen4Platinum = () => {
   // API pokemon will go into this state
   const [pokemonSelection, setPokemonSelection] = useState([])
   const [pokemonType, setPokemonType] = useState([])
@@ -26,7 +26,7 @@ const Gen5Part2 = () => {
   // fetch for pokemon in this generation
   const getAllPokemonApiData = () => {
     axios
-      .get('https://pokeapi.co/api/v2/pokedex/9')
+      .get('https://pokeapi.co/api/v2/pokedex/6')
       .then(response => {
         // set state to response 
         setPokemonSelection(response.data.pokemon_entries);
@@ -68,7 +68,7 @@ const Gen5Part2 = () => {
       {/* Title */}
       <div className='parent'>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <img className='titlePics' src='/TitlePhotos/Pokemon Black 2 and White 2.png' alt='header'/>
+          <img className='titlePics' src='/TitlePhotos/plat.png' alt='header'/>
         </Link>
       </div>
 
@@ -113,4 +113,4 @@ const Gen5Part2 = () => {
   )
 }
 
-export default Gen5Part2;
+export default Gen4Platinum;

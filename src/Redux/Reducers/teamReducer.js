@@ -4,7 +4,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import {addPokemon} from '../Action/teamActions';
 import {deletePokemon} from '../Action/teamActions';
 import { addSelection } from '../Action/teamActions';
-
+import {deleteAllPokemon } from '../Action/teamActions';
 // initialState of globalState
 const initialState = {
   team: [],
@@ -29,6 +29,10 @@ const teamReducer = createReducer(initialState, (builder) => {
     .addCase(addSelection, (state, action) => {
       // reducer to add the pokemon to the array
       state.selection.push(action.payload)
+    })
+    .addCase(deleteAllPokemon, (state, action) => {
+      // reducer to add the pokemon to the array
+      state.team = state.team.filter(pokemon => pokemon.id !== action.payload.id)
     })
 })
 

@@ -36,6 +36,7 @@ const TeamBuilder = ({setState}) => {
       })
     )
 
+    // add it back to selection 
     addToState(objectPokemon);
   }
 

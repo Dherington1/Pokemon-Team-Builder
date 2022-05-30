@@ -7,12 +7,16 @@ import './Generation.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 const Gen6Remaster = () => {
   // API pokemon will go into this state
   const [pokemonSelection, setPokemonSelection] = useState([])
   const [pokemonType, setPokemonType] = useState([])
   const [search, setSearch] = useState('');
+
+  // reference to global state to grab data
+  const team = useSelector(state => state.team.team);
 
   // useEffect needed for data to render onto page from API
   useEffect(() => {
@@ -62,25 +66,33 @@ const Gen6Remaster = () => {
     <div className="App">
       
       {/* Title */}
-      <Link to='/' style={{ textDecoration: 'none' }}>
-        <h1 style={{color: 'black'}} id='title'>Generation 7</h1>
-      </Link>
-
-      {/* Users team */}
-      <div className='teamBuilder'>
-        <form className="teamForm">
-          <fieldset className="teamFieldset">
-            <h3>Your Team</h3>
-            <TeamBuilder setState={setPokemonSelection}/>
-          </fieldset>
-        </form>
+      <div className='parent'>
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          <img className='titlePics' src='/TitlePhotos/Pokemon Ultra Sun and Ultra Moon.png' alt='header'/>
+        </Link>
       </div>
+
+        {/* Users team */}
+        {(team.length > 0) ? (
+        <div className='teamBuilder'>
+          <form className="teamForm">
+            <fieldset className="teamFieldset">
+              <div className='parent'>
+                <img className='titlePic' src='/TitlePhotos/Your-team.png' alt='your-team-title'/>
+              </div>
+              <TeamBuilder setState={setPokemonSelection}/>
+            </fieldset>
+          </form>
+        </div>
+      ) : (<div></div>)}
 
       {/* Pokemon Selection */}
       <div className='choosePokemon'>
         <form className="cardForm">
           <fieldset className="cardFieldset">
-          <h3>Choose Your Pokemon</h3>
+            <div className='parent'>
+              <img className='titlePic' src='/TitlePhotos/Choose-Your-Pokemon.png' alt='your-team-title'/>
+            </div>
           <SearchBox className='searchBar'
             placeholder='Search Pokemon' 
             handleChange= {change4Search}
