@@ -9,6 +9,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
+
 const Gen1 = () => {
   // API pokemon will go into this state
   const [pokemonSelection, setPokemonSelection] = useState([])

@@ -32,7 +32,7 @@ const teamReducer = createReducer(initialState, (builder) => {
     })
     .addCase(deleteAllPokemon, (state, action) => {
       // reducer to add the pokemon to the array
-      state.team = state.team.filter(pokemon => pokemon.id !== action.payload.id)
+      state.team = state.team.filter(pokemon => pokemon.id === action.payload.id)
     })
 })
 

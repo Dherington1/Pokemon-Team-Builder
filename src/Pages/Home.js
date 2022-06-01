@@ -2,8 +2,30 @@ import React from 'react'
 import games from '../games'
 import './Home.css'
 import GameCard from '../Components/Cards/GamePicCard'
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {deleteAllPokemon} from '../Redux/Action/teamActions';
 
 function Home() {
+
+  // reference to global state to push an action to data 
+  const dispatch = useDispatch(); 
+  
+  // empty pervious team from a selected game
+  const emptyTeam = () => {
+    dispatch(
+      // use action deletePokemon
+      deleteAllPokemon({
+        id: ''
+      })
+    )
+  }
+
+  // empty team every time Home is rendered
+  useEffect(() => {
+    emptyTeam()
+  }, [])
+
   return (
     <div >
       {/* <h3 id='headerHome'>POKEMON TEAM BUILDER</h3> */}
