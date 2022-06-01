@@ -44,7 +44,7 @@ const Gen1 = () => {
       response.data.pokemon.forEach(element => {
         arr.push(element.pokemon.name)
       });
-      // set typing with a filter
+      // filter pokemon selection that includes the typing array with the pokemon selection (names of pokemon) ran through array
       setPokemonType(pokemonSelection.filter(item => arr.includes(item.pokemon_species.name)));
     })
   }
