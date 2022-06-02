@@ -21,7 +21,7 @@ function App() {
   
   return (
     <>
-        <Router>
+        <Router basename="/Pokemon-Team-Builder">
           <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/Gen1" component={Gen1} />
