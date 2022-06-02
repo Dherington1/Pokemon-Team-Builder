@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Pokemon-Team-Builder/static/css/main.90180af1.css",
+    "main.js": "/Pokemon-Team-Builder/static/js/main.99e0c202.js",
+    "static/js/787.8ab94834.chunk.js": "/Pokemon-Team-Builder/static/js/787.8ab94834.chunk.js",
+    "index.html": "/Pokemon-Team-Builder/index.html",
+    "main.90180af1.css.map": "/Pokemon-Team-Builder/static/css/main.90180af1.css.map",
+    "main.99e0c202.js.map": "/Pokemon-Team-Builder/static/js/main.99e0c202.js.map",
+    "787.8ab94834.chunk.js.map": "/Pokemon-Team-Builder/static/js/787.8ab94834.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90180af1.css",
+    "static/js/main.99e0c202.js"
+  ]
+}
