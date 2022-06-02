@@ -1,7 +1,6 @@
 # Pokemon Team Builder
-  Link: ""
+  Link: "https://dherington1.github.io/Pokemon-Team-Builder/"
   
-  ## No live link yet
   
   ## Description
   Pokemon Team Builder made with React. This applications will allow you to create a pokemon team for almost every game. Design is inspired by https://github.com/richi3f however, all code is mine.
