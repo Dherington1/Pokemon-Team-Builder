@@ -6,6 +6,7 @@ import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {deleteAllPokemon} from '../Redux/Action/teamActions';
 
+
 function Home() {
 
   // reference to global state to push an action to data 
@@ -30,7 +31,7 @@ function Home() {
     <div >
       {/* <h3 id='headerHome'>POKEMON TEAM BUILDER</h3> */}
       <div className='parent'>
-        <img id='headerHome' src='/TitlePhotos/Pokemon-Team-Builder-Logo-55px.png' alt='logo'/>
+        <img id='headerHome' src="TitlePhotos/Pokemon-Team-Builder-Logo.png" alt='logo'/>
       </div>
 
       <form className="cardForm">

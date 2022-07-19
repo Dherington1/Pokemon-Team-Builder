@@ -24,20 +24,20 @@ function App() {
         <Router basename="/Pokemon-Team-Builder">
           <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/Gen1" component={Gen1} />
-                <Route path="/Gen2" component={Gen2} />
-                <Route path="/Gen3" component={Gen3} />
-                <Route path="/Gen4" component={Gen4} />
-                <Route path="/Gen4-Platinum" component={Gen4Platinum} />
-                <Route path="/Gen4-Remaster" component={Gen4Remaster} />
-                <Route path="/Gen5" component={Gen5} />
-                <Route path="/Gen5-Part2" component={Gen5Part2} />
-                <Route path="/Gen6" component={Gen6} />
-                <Route path="/Gen6-Remaster" component={Gen6Remaster} />
-                <Route path="/Gen7" component={Gen7} />
-                <Route path="/Gen7-Part2" component={Gen7Part2} />
-                <Route path="/Gen-Lets-Go" component={GenLetsGo} />
-                <Route path="/Gen8" component={Gen8} />
+                <Route exact path="/Gen1" component={Gen1} />
+                <Route exact path="/Gen2" component={Gen2} />
+                <Route exact path="/Gen3" component={Gen3} />
+                <Route exact path="/Gen4" component={Gen4} />
+                <Route exact path="/Gen4-Platinum" component={Gen4Platinum} />
+                <Route exact path="/Gen4-Remaster" component={Gen4Remaster} />
+                <Route exact path="/Gen5" component={Gen5} />
+                <Route exact path="/Gen5-Part2" component={Gen5Part2} />
+                <Route exact path="/Gen6" component={Gen6} />
+                <Route exact path="/Gen6-Remaster" component={Gen6Remaster} />
+                <Route exact path="/Gen7" component={Gen7} />
+                <Route exact path="/Gen7-Part2" component={Gen7Part2} />
+                <Route exact path="/Gen-Lets-Go" component={GenLetsGo} />
+                <Route exact path="/Gen8" component={Gen8} />
           </Switch>
         </Router>
     </>
