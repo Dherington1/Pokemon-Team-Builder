@@ -68,7 +68,7 @@ const GenLetsGo = () => {
       {/* Title */}
       <div className='parent'>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <img className='titlePics' src='/TitlePhotos/Pokemon Lets Go Pikachu and Lets Go Evee.png' alt='header'/>
+          <img className='titlePics' src='TitlePhotos/Pokemon Lets Go Pikachu and Lets Go Evee.png' alt='header'/>
         </Link>
       </div>
 
@@ -78,7 +78,7 @@ const GenLetsGo = () => {
           <form className="teamForm">
             <fieldset className="teamFieldset">
               <div className='parent'>
-                <img className='titlePic' src='/TitlePhotos/Your-team.png' alt='your-team-title'/>
+                <img className='titlePic' src='TitlePhotos/Your-team.png' alt='your-team-title'/>
               </div>
               <TeamBuilder setState={setPokemonSelection}/>
             </fieldset>
@@ -92,7 +92,7 @@ const GenLetsGo = () => {
         <form className="cardForm">
           <fieldset className="cardFieldset">
             <div className='parent'>
-              <img className='titlePic' src='/TitlePhotos/Choose-Your-Pokemon.png' alt='your-team-title'/>
+              <img className='titlePic' src='TitlePhotos/Choose-Your-Pokemon.png' alt='your-team-title'/>
             </div>
             <SearchBox className='searchBar'
               placeholder='Search Pokemon' 

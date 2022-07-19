@@ -87,7 +87,7 @@ const Gen4Remaster = () => {
       {/* Title */}
       <div className='parent' onClick={deleteAll}>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <img className='titlePics' src='/TitlePhotos/HeartGold-SoulSilver.png' alt='header'/>
+          <img className='titlePics' src='TitlePhotos/HeartGold-SoulSilver.png' alt='header'/>
         </Link>
       </div>
 
@@ -98,7 +98,7 @@ const Gen4Remaster = () => {
           <form className="teamForm">
             <fieldset className="teamFieldset">
               <div className='parent'>
-                <img className='titlePic' src='/TitlePhotos/Your-team.png' alt='your-team-title'/>
+                <img className='titlePic' src='TitlePhotos/Your-team.png' alt='your-team-title'/>
               </div>
               <TeamBuilder setState={setPokemonSelection}/>
             </fieldset>
@@ -111,7 +111,7 @@ const Gen4Remaster = () => {
         <form className="cardForm">
           <fieldset className="cardFieldset">
             <div className='parent'>
-              <img className='titlePic' src='/TitlePhotos/Choose-Your-Pokemon.png' alt='your-team-title'/>
+              <img className='titlePic' src='TitlePhotos/Choose-Your-Pokemon.png' alt='your-team-title'/>
             </div>
           <SearchBox className='searchBar'
             placeholder='Search Pokemon' 

@@ -3,6 +3,9 @@ import typing from './types'
 import './filter.css'
 
 function Filter({handleClick}) {
+  console.log("this is typing");
+  console.log(typing);
+
   return (
     <div className='typing'>
       {typing.map(element => (
