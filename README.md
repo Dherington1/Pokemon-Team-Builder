@@ -1,18 +1,21 @@
+
 # Pokemon Team Builder
-  Link: "https://dherington1.github.io/Pokemon-Team-Builder/"
-  
-  
-  ## Description
-  Pokemon Team Builder made with React. This applications will allow you to create a pokemon team for almost every game. Design is inspired by https://github.com/richi3f however, all code is mine.
- 
-  
-  ## License
-  This application is covered by the MIT License, the terms of which can be found [here](https://opensource.org/licenses/MIT).
 
-  ### GitHub Profile
-  [GitHub Profile](http://github.com/Dherington1)
-  
-  ### Email
-  Dherington2@gmail.com
 
-  ![mit](https://img.shields.io/badge/license-MIT%20License-red)
+This website allows users to create a pokemon team by filtering the pokemon by name and type for every pokemon generation currently out.
+
+## Link
+https://dherington1.github.io/Pokemon-Team-Builder/
+## Demo
+
+![pokemon-demo](https://user-images.githubusercontent.com/87780351/182469285-8600fffe-0bc9-47f2-91bb-ee9476aff22d.gif)
+
+
+## Acknowledgements
+Design and idea is inspired by https://github.com/richi3f however, all code is mine.
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at dherington2@gmail.com
+
